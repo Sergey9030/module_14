@@ -160,7 +160,7 @@ if __name__ == "__main__":
 
     all_prd = get_all_products(db_name, tbl_name)
     if not all_prd:
-        print('Ни чего не получилост')
+        print('Ни чего не получилось')
         quit()
     print(all_prd)
     executor.start_polling(dp, skip_updates=True)
