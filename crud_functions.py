@@ -42,8 +42,14 @@ def add_user(db_name, tbl_name, username, email, age):
         print(f'Данные: username="{username}", email="{email}", age="{age}", balance="{1000}"')
         print('Успешно добавлены.')
         connection.commit()  # Проводим транзакцию
+        cursor.close()
+        connection.close()
+        return True
     except sqlite3.IntegrityError:
         print(f'Некорректные данные. Данные не добавлены.')
+        cursor.close()
+        connection.close()
+        return False
 
 def add_data(db_name, tbl_name):
 # Добавляет данные в таблицу <tbl_name> находящуюся в базе данных <db_name>.
