@@ -92,9 +92,9 @@ async def set_age(message, state):
     data = await state.get_data()
     await message.answer(f'{data["username"]}, {data["email"]}, {data["age"]}')
     await state.finish()
-    try:
-        add_user(db_name, tbl2_name, data["username"], data["email"], data["age"])
-    except:
+    if add_user(db_name, tbl2_name, data["username"], data["email"], data["age"]):
+        await message.answer('Данные успешно добавлены.')
+    else:
         await message.answer('Чтото пошло не так. Вернитесь к регистрации.')
 
 #==================================== Конец обработки команды "Зарегистрироваться" ===================================
