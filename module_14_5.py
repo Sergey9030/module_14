@@ -45,7 +45,7 @@ ikb.add(ibt_go, ibt_info)
 # Инлайн клавиатуры для покупок создаются при выводе списка покупок
 # в методе get_buying_list().
 
-api = "7894373187:AAG6EizTKiQDfLof5qLUszC9oeTyDhckb6k"
+api = ""
 bot = Bot(token=api)  # Бот
 dp = Dispatcher(bot, storage=MemoryStorage())  # Диспетчер
 
